@@ -1,5 +1,5 @@
-# jupyter-spark-remote
-Manage Jupyter+Spark via API
+# Jupyter Remote
+Manage Jupyter Notebook and Python kernels programmatically, remotely via API.
 
 `jupyter-remote` is a ready-to-use package for Modify/Execute/Manage multiple Jupyter Notebooks programmatically and parallely, and can perform following tasks
 - Connect to Jupyter Notebook and Python kernel.
@@ -101,7 +101,7 @@ Below is the list of bugs I have identified and are WIP
 2. Improve NBclient handling
 
 Below are the list of improvements to be added here
-1. Enable connectivity to Spark hosted remotely via SSH.
+1. If Spark master is running on remote server (i.e. different from server running Jupyter), enable connectivity to Spark hosted remotely via SSH.
 2. use `nbformat` and `nbclient` library for handling notebook components
 3. Currently, sessions are being stored on memory. Need to setup DB for it.
 4. Create function to get output of a cell from ipynb file.
@@ -109,3 +109,13 @@ Below are the list of improvements to be added here
 6. Getting below error sometimes when running. Probably due to missing handling of messages.
 `WARNING:traitlets:Could not destroy zmq context for <jupyter_client.blocking.client.BlockingKernelClient at object at 0x.......>`
 
+# Use cases
+
+1. Useful for a project where we need a remote service for executing certain pieces of PySpark code for different users simultaneously. This code can target any field considering we have environment setup ready. <br>
+
+# Author Info
+
+Name: Aman Agarwal<br>
+Email: aman1931998@gmail.com<br>
+LinkedIn: linkedin.com/in/aman1931998<br>
+Always open for collaboration and improving open source community. Feel free to reach out to me for any queries or contributions towards this or any other projects.
