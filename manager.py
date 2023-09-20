@@ -61,28 +61,24 @@ class JupyterManager:
     def generate_python_script_from_notebook(self, session_id):
         print('[__init__] Generating python code from notebook on session. %s'%(session_id))
         self.memory[session_id]['manager'].generate_python_script_from_notebook()
-    
-    def generate_python_script_from_notebook(self, session_id):
-        print('[__init__] Generating python code from notebook on session. %s'%(session_id))
-        code = self.memory[session_id]['manager'].generate_python_script_from_notebook()
-        return code
+
     
     def delete_session(self, session_id):
-        print('[__init__] Deleting session')
+        print('[__init__]  Deleting session')
         if session_id not in self.memory:
             print('[__init__] Session not found in memory')
             return False
-        print('[__init__] Closing notebook client')
+        print('[__init__]  Closing notebook client')
         del self.memory[session_id]['manager']
-        print('[__init__] Killing kernel')
-        op = self.kil_kernel(self.memory[session_id]['kernel_id'])
+        print('[__init__]  Killing kernel')
+        op = self.kill_kernel(self.memory[session_id]['kernel_id'])
         if op == False:
-            print('[__init__] Unable to kill kernel')
+            print('[__init__]  unable to kill kernel')
             return False
         del self.memory[session_id]
-        print('[__init__] Deleting Session deleted.')
+        print('[__init__]  Session deleted successfully.')
         return True
-    
+
     def create_session(self, session_id, notebook_name = '', notebook_path = ''):
         print('[__init__]  Creating session')
         if notebook_name == '':
