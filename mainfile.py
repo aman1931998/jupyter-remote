@@ -1,4 +1,9 @@
-import os
+
+
+
+
+
+'''import os
 import requests
 
 from manager import JupyterManager
@@ -23,3 +28,5 @@ JM = JupyterManager(cfg)
 
 # Create a new session (containing kernel, notebook and sockets)
 JM.create_session(session_id = 'session1')
+
+'''
